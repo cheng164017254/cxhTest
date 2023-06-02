@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Created-By: IntelliJ IDEA
+Built-By: 86151
+Build-Jdk: 11.0.10
+Implementation-Title: evaluation
+Implementation-Version: 1.0.0
+Implementation-Vendor-Id: com.ustb
+Main-Class: ${start-class}
+

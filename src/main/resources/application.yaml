@@ -1,0 +1,61 @@
+server:
+  port: 8081
+
+spring:
+  datasource:
+    name: druidDataSource
+    type: com.alibaba.druid.pool.DruidDataSource
+    druid:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      url: jdbc:mysql://localhost:3306/stuyiqing?useUnicode=true&characterEncoding=utf-8&serverTimezone=GMT
+      username: root
+      password: 11
+      filters: stat,wall,log4j,config
+      max-active: 100
+      initial-size: 1
+      max-wait: 60000
+      min-idle: 1
+      time-between-eviction-runs-millis: 60000
+      min-evictable-idle-time-millis: 300000
+      validation-query: select 'x'
+      test-while-idle: true
+      test-on-borrow: false
+      test-on-return: false
+      pool-prepared-statements: true
+      max-open-prepared-statements: 50
+      max-pool-prepared-statement-per-connection-size: 20
+#mybatis:
+#  type-aliases-package: com.caochenlei.domain
+#  configuration:
+#    map-underscore-to-camel-case: true
+logging:
+  file:
+    name: C:/logs/lab.log #输入到文件中的日志名称
+
+#自定义属性，配置私钥路径
+rsa:
+  key:
+    privateKeyPath: C:\auth_key\rsa_key
+    publicKeyPath: C:\auth_key\rsa_key.pub
+#pagehelper,mybatis分页插件设置
+pagehelper:
+  helperDialect: mysql
+  reasonable: true
+  supportMethodArguments: true
+  params: count=countSqlttttt
+output:
+  path: C:\outputCodeFromDesign
+  packageName: com.ustb.evaluation.mod05test
+upload:
+  #  依次是个人相片；人员其它相片；人员档案图片；课程辅助资料的存取路径和文件真正路径的数据
+  accessPath: /v1/stu/StuBasic/upload/**
+  uploadFolder: C:/0001Projects/photos/idphoto/
+  accessPathOther: /v1/stu/StuPhoto/upload/**
+  uploadFolderOther: C:/0001Projects/photos/otherphoto/
+  accessPathFile: /v1/stu/StuFile/upload/**
+  uploadFolderFile: C:/0001Projects/photos/filephoto/
+  accessPathCourseDateFile: /v1/stu/StuCourse/upload/**
+  uploadFolderCourseDateFile: C:/0001Projects/photos/coursedatafile/
+  excelPath: /v1/stu/Excel/**
+  excelFolder: D:/0001Projects/photos/exceldata/
+  excelTmpFolder: D:/0001Projects/photos/exceltemplate/
